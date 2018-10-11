@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item class="text-center" *ngIf="base64Image">
+    <img [src]="base64Image"/>
+  </ion-item>
+  <ion-item>
+    <ion-label>Editar foto tirada?</ion-label>
+    <ion-toggle [(ngModel)]="allowEdit"></ion-toggle>
+  </ion-item>
+  <button class="margin-top" ion-button block (click)="onTakePhoto()">Tirar foto</button>
+</ion-content>
