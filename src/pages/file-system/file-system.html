@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Sistema de arquivos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let fileEntry of files">
+      <ion-item >
+        <ion-icon name="{{ fileEntry.isDirectory ? 'folder' : 'document' }}"></ion-icon> {{ fileEntry.name }}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="onRemoveTXTFile(fileEntry)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+        <button ion-button color="primary" (click)="onReadTXTFile(fileEntry)">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-item *ngIf="error">
+    {{ error | json }}
+  </ion-item>
+  <ion-fab right bottom>
+    <button ion-fab (click)="onAddTXTFile()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
