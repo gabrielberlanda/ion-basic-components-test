@@ -1,0 +1,26 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Geo Localização</ion-title>
+  </ion-navbar>
+  <ion-toolbar >Async Positions</ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list >
+    <ion-item *ngFor="let position of asyncPositions">
+      <h2>Latitude {{position.coords.latitude}}</h2>
+      <h2>Longitude {{position.coords.longitude}}</h2>
+      <p>{{position.timestamp | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="onShowCurrentLocation()">
+      <ion-icon name="locate"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
