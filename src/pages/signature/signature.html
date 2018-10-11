@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Assinatura
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="signature-container" #signatureContainer>
+    <signature-pad 
+      #signaturePad 
+      [options]="signatureConfig"
+      (onBeginEvent)="onDrawStart()"
+      (onEndEvent)="onDrawComplete()">
+    </signature-pad>
+  </div>
+  
+  <ion-row>
+    <ion-col>
+      <button ion-button block color="danger" [disabled]="isDrawing" (click)="onClearDraw()">Limpar</button>
+    </ion-col>
+    <ion-col >
+      <button ion-button block color="primary" [disabled]="isDrawing" (click)="onSaveDraw()">Salvar</button>
+    </ion-col>
+  </ion-row>
+
+  <div class="signature-container" style="margin-top: 10;" *ngIf="signature">
+    <img [src]="signature"/>
+  </div>
+</ion-content>
