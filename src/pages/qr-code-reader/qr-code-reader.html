@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Leitura de QRCode</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngIf="scannedBarcode">
+    <p>
+      <ion-icon name="barcode"></ion-icon> QRCODE lido <span ion-text color="primary">{{scannedBarcode}}</span>
+    </p>
+  </ion-item>
+  <button ion-button full (click)="onReadQRCode()">Ler QRCODE</button>
+</ion-content>
