@@ -29,6 +29,7 @@ import { DirectivesModule } from '../directives/directives.module';
 import { MapPage } from '../pages/map/map';
 import { MapOfflinePage } from '../pages/map-offline/map-offline';
 
+
 @NgModule({
   declarations: [
     MyApp,

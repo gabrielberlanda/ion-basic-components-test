@@ -49,7 +49,7 @@ export class MapOfflinePage {
 
     //this.map is map object defined in global scope 
     if (this.map == null) {
-      this.map = L.map("map", { bounceAtZoomLimits: false})
+      this.map = L.map("map-offline", { bounceAtZoomLimits: false})
                   .setView([currentCenterlat, currentCenterlng], defaultZoomLevel);
     }
     console.log('Path', path);

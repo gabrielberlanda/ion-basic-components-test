@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageProvider } from '../../providers/image-provider';
-import { ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 import { GalleryModal } from 'ionic-gallery-modal';
 
 @Component({
@@ -11,7 +11,7 @@ export class IonicGalleryModalPage {
 
   images: any[];
 
-  constructor(private imageProvider: ImageProvider, private modalController: ModalController) {}
+  constructor(private imageProvider: ImageProvider, private modalController: ModalController, private navController: NavController) {}
 
   ionViewDidLoad() {
     this.imageProvider.loadImages().then((result) => {
@@ -25,8 +25,10 @@ export class IonicGalleryModalPage {
   }
 
   onOpenGallery() {
-    let modal = this.modalController.create(GalleryModal, { photos: this.images, initialSlide: 0 }, {showBackdrop: false, enableBackdropDismiss: false})
-    modal.present();
+
+    this.navController.push(GalleryModal, {photos: this.images, initialSlide: 0});
+    // let modal = this.modalController.create(GalleryModal, { photos: this.images, initialSlide: 0 }, {showBackdrop: false, enableBackdropDismiss: false, cssClass: 'modal-full-screen'});
+    // modal.present();
   }
 
 

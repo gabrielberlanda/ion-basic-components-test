@@ -22,11 +22,12 @@ export class NgxGalleryPage {
   @ViewChild(NgxImageGalleryComponent)
   public galleryComponent: NgxImageGalleryComponent;
 
-  public galleryConfig: GALLERY_CONF = {
+  public conf: GALLERY_CONF = {
     imageOffset: 'opx',
     showImageTitle: true,
     showCloseControl: true,
-    showExtUrlControl: false
+    showExtUrlControl: false,
+    showArrows: false
   }
 
   constructor(
@@ -44,7 +45,6 @@ export class NgxGalleryPage {
           thumbnailUrl: image.url,
           title: `Title ${image.id}`,
           altText: `Title ${image.id}`,
-          extUrl: image.url
         }
       });
     }, err => console.error(err));
