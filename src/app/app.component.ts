@@ -11,12 +11,13 @@ import { IonicGalleryModalPage } from '../pages/ionic-gallery-modal/ionic-galler
 import { FileSystemPage } from '../pages/file-system/file-system';
 import { MapPage } from '../pages/map/map';
 import { MapOfflinePage } from '../pages/map-offline/map-offline';
+import { IonSlideGallery } from '../pages/ion-slide-gallery/ion-slide-gallery';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = CameraPage;
+  rootPage:any = IonSlideGallery;
   pages: AppPage[] = [];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -25,6 +26,7 @@ export class MyApp {
     this.pages.push({title: 'Leitor de QRCODE', component: QrCodeReaderPage});
     this.pages.push({title: 'Assinatura', component: SignaturePage});
     this.pages.push({title: 'Ngx Galeria', component: NgxGalleryPage});
+    this.pages.push({title: 'Ion slide gallery', component: IonSlideGallery});
     this.pages.push({title: 'Ionic Gallery Modal', component: IonicGalleryModalPage});
     this.pages.push({title: 'Sistema de arquivos', component: FileSystemPage});
     this.pages.push({title: 'Mapa', component: MapPage});

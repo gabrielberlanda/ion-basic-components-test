@@ -13,7 +13,13 @@
 
 <ion-content padding>
   <ion-item class="text-center" *ngIf="base64Image">
-    <img [src]="base64Image"/>
+    <ion-slides pager loop zoom="true" #slider>
+      <ion-slide>
+        <!-- <div class="swiper-zoom-container"> -->
+          <img [src]="base64Image"/>
+        <!-- </div> -->
+      </ion-slide>
+    </ion-slides>
   </ion-item>
   <ion-item>
     <ion-label>Editar foto tirada?</ion-label>

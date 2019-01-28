@@ -10,7 +10,6 @@ import { ImageProvider } from '../../providers/image-provider';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @Component({
   selector: 'ngx-page-gallery',
   templateUrl: 'ngx-gallery.html',

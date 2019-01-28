@@ -28,7 +28,12 @@ import { FileFormModal } from '../pages/file-system/file-form/file-form';
 import { DirectivesModule } from '../directives/directives.module';
 import { MapPage } from '../pages/map/map';
 import { MapOfflinePage } from '../pages/map-offline/map-offline';
-
+import { IonSlideGallery } from '../pages/ion-slide-gallery/ion-slide-gallery';
+import { IonSlideGalleryModal } from '../pages/ion-slide-gallery/ion-slide-gallery-modal';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ZoomAreaModule } from 'ionic2-zoom-area';
+import { PinchZoomModule } from 'ngx-pinch-zoom';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,9 @@ import { MapOfflinePage } from '../pages/map-offline/map-offline';
     FileSystemPage,
     FileFormModal,
     MapPage,
-    MapOfflinePage
+    MapOfflinePage,
+    IonSlideGallery,
+    IonSlideGalleryModal
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,11 @@ import { MapOfflinePage } from '../pages/map-offline/map-offline';
     NgxImageGalleryModule,
     ionicGalleryModal.GalleryModalModule,
     DirectivesModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicImageViewerModule,
+    BrowserAnimationsModule,
+    ZoomAreaModule.forRoot(),
+    PinchZoomModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +76,9 @@ import { MapOfflinePage } from '../pages/map-offline/map-offline';
     FileSystemPage,
     FileFormModal,
     MapPage,
-    MapOfflinePage
+    MapOfflinePage,
+    IonSlideGallery,
+    IonSlideGalleryModal
   ],
   providers: [
     StatusBar,

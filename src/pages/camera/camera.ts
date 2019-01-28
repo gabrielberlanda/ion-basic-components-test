@@ -8,7 +8,11 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'camera.html'
 })
 export class CameraPage {
-
+  sliderOpts = {
+    zoom: {
+      maxRatio: 5
+    }
+  };
   public base64Image: string = null;
   public allowEdit: boolean = false;
   public cameraSource: number;
